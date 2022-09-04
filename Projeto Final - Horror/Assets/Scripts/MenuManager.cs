@@ -9,6 +9,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject Menu;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Extra;
+    [SerializeField] private GameObject Credits;
+
     public void Play(){
         SceneManager.LoadScene(nameOfLevel);
     }
@@ -28,6 +30,16 @@ public class MenuManager : MonoBehaviour
     }
     public void CloseExtra(){
         Extra.SetActive(false);
+        Menu.SetActive(true);
+    }
+
+    public void OpenCredits(){
+        Menu.SetActive(false);
+        Credits.SetActive(true);
+        Debug.Log("Abriu credits");
+    }
+    public void CloseCredits(){
+        Credits.SetActive(false);
         Menu.SetActive(true);
     }
 }
