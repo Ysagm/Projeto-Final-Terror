@@ -15,13 +15,16 @@ public class Dica : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             modalDica.SetActive(true);
+            Time.timeScale = 0;
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
             modalDica.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }
