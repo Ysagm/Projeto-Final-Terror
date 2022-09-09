@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.06
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.10528659, g: 0.11421623, b: 0.13207549, a: 1}
+  m_AmbientSkyColor: {r: 0.10239408, g: 0.10817906, b: 0.122641504, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -2601,10 +2601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorDepth: {x: 64, y: 64, z: 64}
-  ditherDepth: {x: 32, y: 32, z: 32}
+  colorDepth: {x: 80, y: 80, z: 80}
+  ditherDepth: {x: 70, y: 70, z: 70}
   ditheringMatrixSize: 0
-  framerateLimit: 20
+  framerateLimit: 18
   _Shader: {fileID: 4800000, guid: 364a79f75940cde409d6c07092dacd71, type: 3}
 --- !u!114 &963194231
 MonoBehaviour:
@@ -2618,8 +2618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _VertexGridResolution: 220
-  _EnableTriangleSortingEmulation: 0
+  _VertexGridResolution: 80
+  _EnableTriangleSortingEmulation: 1
   _DepthDebugView: 0
 --- !u!4 &965016818 stripped
 Transform:
