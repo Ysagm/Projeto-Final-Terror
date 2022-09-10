@@ -46,7 +46,7 @@ public class GameConnection : MonoBehaviourPunCallbacks
         if (returnCode == ErrorCode.GameDoesNotExist)
         {
             RoomOptions room = new RoomOptions { MaxPlayers = 20 };
-            PhotonNetwork.CreateRoom("GameLoot", room, null);
+            PhotonNetwork.CreateRoom("ProjetoTerror", room, null);
             chatLog.text += "\nCriando sala ProjetoTerror!";
         }
     }
@@ -76,6 +76,6 @@ public class GameConnection : MonoBehaviourPunCallbacks
         Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(-10.0f, 10.0f));
         Quaternion rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360.0f));
         //Instantiate do Photon carrega um prefab do Resources
-        PhotonNetwork.Instantiate("PlayerCube", position, rotation);
+        PhotonNetwork.Instantiate("Player", position, rotation);
     }
 }

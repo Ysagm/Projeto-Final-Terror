@@ -1,19 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 using Photon.Pun;
+using Photon.Realtime;
 
 public class GamePlayer : MonoBehaviour
 {
     Rigidbody rbody;
     PhotonView photonView;
-    private PuzzleQuestion puzzle;
+    //private PuzzleQuestion puzzle;
+    GameObject myPlayer;
+
+    Player[] twoPlayers;
+    int id;
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
+
+        twoPlayers = PhotonNetwork.PlayerList;
+
+        foreach(Player p in twoPlayers)
+        {
+            if(p != PhotonNetwork.LocalPlayer)
+            {
+                id++;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -22,6 +38,7 @@ public class GamePlayer : MonoBehaviour
         if(photonView.IsMine) 
         {
             //puzzle.Resposta("");
+            myPlayer = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), GameSpawn.instance.spawnPoints[id].position, Quaternion.identity);
 
             if (Input.GetKeyDown(KeyCode.C))
             {
