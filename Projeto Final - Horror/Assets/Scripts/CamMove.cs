@@ -29,7 +29,7 @@ public class CamMove : MonoBehaviour
 
         //Breathing movement
         breathing += Time.deltaTime;
-        float height = 0.0008f; //wavey movement max height
+        float height = 0.001f; //wavey movement max height
         float spd = 3f; //wavey movement speed
 
         float wavey = height * Mathf.Sin(breathing * spd); //creates wavey offset using Sin waves
