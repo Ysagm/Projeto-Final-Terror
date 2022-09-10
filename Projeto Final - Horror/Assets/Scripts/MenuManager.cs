@@ -7,12 +7,24 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string nameOfLevel;
     [SerializeField] private GameObject Menu;
+    [SerializeField] private GameObject Intro;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
+    
 
     public void Play(){
         SceneManager.LoadScene(nameOfLevel);
+
+    }
+    public void OpenIntro(){
+        Menu.SetActive(false);
+        Intro.SetActive(true);
+        Debug.Log("Abriu intro");
+    }
+    public void CloseIntro(){
+        Intro.SetActive(false);
+        Menu.SetActive(true);
     }
     public void OpenOptions(){
         Menu.SetActive(false);
