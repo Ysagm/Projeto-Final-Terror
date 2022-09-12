@@ -11,17 +11,17 @@ public class GamePlayer : MonoBehaviour
     Rigidbody rbody;
     PhotonView photonView;
     //private PuzzleQuestion puzzle;
-    GameObject myPlayer;
+    /*GameObject myPlayer;
 
     Player[] twoPlayers;
-    int id;
+    int id;*/
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
 
-        twoPlayers = PhotonNetwork.PlayerList;
+        /*twoPlayers = PhotonNetwork.PlayerList;
 
         foreach(Player p in twoPlayers)
         {
@@ -29,7 +29,7 @@ public class GamePlayer : MonoBehaviour
             {
                 id++;
             }
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class GamePlayer : MonoBehaviour
         if(photonView.IsMine) 
         {
             //puzzle.Resposta("");
-            myPlayer = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), GameSpawn.instance.spawnPoints[id].position, Quaternion.identity);
+            //myPlayer = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), GameSpawn.instance.spawnPoints[id].position, Quaternion.identity);
 
             if (Input.GetKeyDown(KeyCode.C))
             {
