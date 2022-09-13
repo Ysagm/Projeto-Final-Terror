@@ -10,27 +10,49 @@ public class GameSpawn : MonoBehaviour
     [SerializeField]
     private GameObject player = null;
     public int count = 0;
-    public List<Vector3> spawnPosition = new List<Vector3>();
+    public List<Transform> spawnPosition = new List<Transform>();
+
     void Start()
     {
-        spawnPosition.Add(new Vector3(-1,0,3));
-        spawnPosition.Add(new Vector3(-1,0,-2));
+        //spawnPosition.Add(new Vector3(-1,0,3));
+        //spawnPosition.Add(new Vector3(-1,0,-2));
 
         for(int i = 0; i < 1; i++)
         {
             count++;
 
-            if(PhotonNetwork.IsMasterClient)
+            /*if(PhotonNetwork.IsMasterClient)
+            //if(true)
             {
-                PhotonNetwork.Instantiate(player.name, new Vector3(-1,0,3), transform.rotation, 0);
+                Instantiate(player, spawnPosition[0].position, spawnPosition[0].rotation);
+                //PhotonNetwork.Instantiate(player.name, spawnPosition[0].position, spawnPosition[0].rotation, 0);
                 Debug.Log("Player 01 created");
             }
             else
             {
-                PhotonNetwork.Instantiate(player.name, new Vector3(-1,0,-2), transform.rotation, 0);
+                Instantiate(player, spawnPosition[1].position, spawnPosition[1].rotation);
+                //PhotonNetwork.Instantiate(player.name, spawnPosition[1].position, spawnPosition[1].rotation, 0);
                 Debug.Log("Player 02 created");
-            }
+            }*/
         }
 
+    }
+
+    public void OnSpawn()
+    {
+        if(PhotonNetwork.IsMasterClient)
+            //if(true)
+            {
+                //Instantiate(player, spawnPosition[0].position, spawnPosition[0].rotation);
+                PhotonNetwork.Instantiate("Player", spawnPosition[0].position, spawnPosition[0].localRotation, 0);
+
+                Debug.Log("Player 01 created");
+            }
+            else
+            {
+                //Instantiate(player, spawnPosition[1].position, spawnPosition[1].rotation);
+                PhotonNetwork.Instantiate("Player", spawnPosition[1].position, spawnPosition[1].localRotation, 0);
+                Debug.Log("Player 02 created");
+            }
     }
 }

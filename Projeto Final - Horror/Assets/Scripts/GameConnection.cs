@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 using Photon.Pun;
 using Photon.Realtime;
 
 public class GameConnection : MonoBehaviourPunCallbacks
 {
+    public UnityEvent onEnterLobbyCallback;
     public Text chatLog;
 
      void Awake()
@@ -36,6 +38,8 @@ public class GameConnection : MonoBehaviourPunCallbacks
         chatLog.text += "\nEntrou no Lobby!";
         PhotonNetwork.JoinRoom("ProjetoTerror");
         chatLog.text += "\nEntrando na sala ProjetoTerror...";
+
+        //onEnterLobbyCallback.Invoke();
     }
 
     //--------------------------------------------------------
@@ -76,6 +80,8 @@ public class GameConnection : MonoBehaviourPunCallbacks
         Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(-10.0f, 10.0f));
         Quaternion rotation = Quaternion.Euler(Vector3.up * Random.Range(0, 360.0f));
         //Instantiate do Photon carrega um prefab do Resources
-        PhotonNetwork.Instantiate("Player", position, rotation);
+        //PhotonNetwork.Instantiate("Player", position, rotation);
+
+        onEnterLobbyCallback.Invoke();
     }
 }
