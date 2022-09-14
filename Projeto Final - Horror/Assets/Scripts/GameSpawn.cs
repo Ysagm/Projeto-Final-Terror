@@ -8,7 +8,7 @@ using Photon.Realtime;
 public class GameSpawn : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player = null;
+    //private GameObject player = null;
     public int count = 0;
     public List<Transform> spawnPosition = new List<Transform>();
 
