@@ -44,14 +44,14 @@ public class GameSpawn : MonoBehaviour
             //if(true)
             {
                 //Instantiate(player, spawnPosition[0].position, spawnPosition[0].rotation);
-                PhotonNetwork.Instantiate("Player", spawnPosition[0].position, spawnPosition[0].localRotation, 0);
+                PhotonNetwork.Instantiate("Player", spawnPosition[0].position, spawnPosition[0].rotation, 0);
 
                 Debug.Log("Player 01 created");
             }
             else
             {
                 //Instantiate(player, spawnPosition[1].position, spawnPosition[1].rotation);
-                PhotonNetwork.Instantiate("Player", spawnPosition[1].position, spawnPosition[1].localRotation, 0);
+                PhotonNetwork.Instantiate("Player", spawnPosition[1].position, spawnPosition[1].rotation, 0);
                 Debug.Log("Player 02 created");
             }
     }

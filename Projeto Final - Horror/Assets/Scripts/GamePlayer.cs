@@ -10,6 +10,9 @@ public class GamePlayer : MonoBehaviour
 {
     Rigidbody rbody;
     PhotonView photonView;
+    public Camera myCamera;
+    public CamMove myCamMove;
+    public GameObject playerBody;
     //private PuzzleQuestion puzzle;
     /*GameObject myPlayer;
 
@@ -20,7 +23,9 @@ public class GamePlayer : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
-
+        myCamera.enabled = photonView.IsMine;
+        myCamMove.camMoving = photonView.IsMine;
+        playerBody.SetActive(!photonView.IsMine);
         /*twoPlayers = PhotonNetwork.PlayerList;
 
         foreach(Player p in twoPlayers)
