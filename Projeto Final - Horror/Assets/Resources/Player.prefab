@@ -103,7 +103,7 @@ MonoBehaviour:
   rotationX: 0
   rotationY: 0
   playerBody: {fileID: 3108337730759460851}
-  camMoving: 0
+  camMoving: 1
 --- !u!114 &4024483399412134150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _VertexGridResolution: 80
-  _EnableTriangleSortingEmulation: 1
+  _VertexGridResolution: 50
+  _EnableTriangleSortingEmulation: 0
   _DepthDebugView: 0
 --- !u!114 &4024483399412134151
 MonoBehaviour:
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorDepth: {x: 80, y: 80, z: 80}
-  ditherDepth: {x: 70, y: 70, z: 70}
+  colorDepth: {x: 100, y: 100, z: 100}
+  ditherDepth: {x: 80, y: 80, z: 80}
   ditheringMatrixSize: 1
   framerateLimit: 15
   _Shader: {fileID: 4800000, guid: 364a79f75940cde409d6c07092dacd71, type: 3}
