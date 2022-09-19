@@ -133,8 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorDepth: {x: 80, y: 80, z: 80}
   ditherDepth: {x: 70, y: 70, z: 70}
-  ditheringMatrixSize: 0
-  framerateLimit: 18
+  ditheringMatrixSize: 1
+  framerateLimit: 15
   _Shader: {fileID: 4800000, guid: 364a79f75940cde409d6c07092dacd71, type: 3}
 --- !u!1 &4024483400358987019
 GameObject:
