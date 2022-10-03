@@ -24,7 +24,7 @@ public class CamMove : MonoBehaviour
         {
             //Rotation
             rotationY += speedV * Input.GetAxis("Mouse X");
-            rotationX += speedH * Input.GetAxis("Mouse Y");
+            rotationX += speedH * - Input.GetAxis("Mouse Y");
 
             //Limit rotation
             rotationX = Mathf.Clamp(rotationX, -30f, 30f);
@@ -39,7 +39,7 @@ public class CamMove : MonoBehaviour
         //Breathing movement
         breathing += Time.deltaTime;
         float height = 0.001f; //wavey movement max height
-        float spd = 3f; //wavey movement speed
+        float spd = 2f; //wavey movement speed
 
         float wavey = height * Mathf.Sin(breathing * spd); //creates wavey offset using Sin waves
         if(Time.timeScale == 0)
