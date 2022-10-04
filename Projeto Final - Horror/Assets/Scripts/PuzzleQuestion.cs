@@ -23,8 +23,14 @@ public class PuzzleQuestion : MonoBehaviour
     private float quantRiddles;
     private float media;
 
+    //Audio
+    public AudioSource audioAcerto;
+    public AudioSource audioErro;
+
     void Start()
     {
+        //audioAcerto = GetComponent<AudioSource>();
+
         idRiddle = 0;
         quantRiddles = riddles.Length;
         riddle.text = riddles[idRiddle];
@@ -40,7 +46,11 @@ public class PuzzleQuestion : MonoBehaviour
             if(answerE[idRiddle] == certas[idRiddle])
             {
                 acertos++;
-                Debug.Log("Acertou D");
+                Debug.Log("Acertou E");
+                audioAcerto.Play();
+            }
+            else{
+                audioErro.Play();
             }
         }
         else if (answer == "D"){
@@ -48,6 +58,10 @@ public class PuzzleQuestion : MonoBehaviour
             {
                 acertos++;
                 Debug.Log("Acertou D");
+                audioAcerto.Play();
+            }
+            else{
+                audioErro.Play();
             }
                 
         }
