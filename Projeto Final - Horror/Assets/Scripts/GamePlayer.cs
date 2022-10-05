@@ -13,6 +13,9 @@ public class GamePlayer : MonoBehaviour
     public Camera myCamera;
     public CamMove myCamMove;
     public GameObject playerBody;
+    public AudioListener myListener;
+
+    bool puzzleIsClosed = false;
     //private PuzzleQuestion puzzle;
     /*GameObject myPlayer;
 
@@ -24,6 +27,7 @@ public class GamePlayer : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
         myCamera.enabled = photonView.IsMine;
+        myListener.enabled = photonView.IsMine;
         myCamMove.camMoving = photonView.IsMine;
         playerBody.SetActive(!photonView.IsMine);
     }
@@ -36,6 +40,17 @@ public class GamePlayer : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 photonView.RPC("ChangeColor", RpcTarget.All, Random.Range(0.0f, 1.0f));
+            }
+
+            if(Mathf.Abs(myCamera.transform.localEulerAngles.y) > 45 && puzzleIsClosed == false)
+            {
+                puzzleIsClosed = true;
+                FindObjectOfType<OpenPuzzle>().Close();
+                Debug.Log("Close " + Mathf.Abs(myCamera.transform.localEulerAngles.y));
+            }
+            else
+            {
+                puzzleIsClosed = false;
             }
         }
     }

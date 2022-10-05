@@ -44,11 +44,11 @@ public class OpenPuzzle : MonoBehaviour
         //papelPuzzle.transform.position = new Vector3(0f, 0.0f, 0.0f);
         if (PhotonNetwork.IsMasterClient)
         {
-            papelPuzzle1.transform.Rotate(45.0f, 0.0f, 0.0f, Space.Self);
+            papelPuzzle1.transform.localEulerAngles = Vector3.right * 45;
         }
         else
         {
-            papelPuzzle2.transform.Rotate(-45.0f, 0.0f, 0.0f, Space.Self);
+            papelPuzzle2.transform.localEulerAngles = Vector3.left * 45;
         }
             
         
@@ -72,11 +72,11 @@ public class OpenPuzzle : MonoBehaviour
 
         if (PhotonNetwork.IsMasterClient)
         {
-            papelPuzzle1.transform.Rotate(-45.0f, 0.0f, 0.0f, Space.Self);
+            papelPuzzle1.transform.localEulerAngles = Vector3.zero;
         }
         else
         {
-            papelPuzzle2.transform.Rotate(45.0f, 0.0f, 0.0f, Space.Self);
+            papelPuzzle2.transform.localEulerAngles = Vector3.zero;
         }
     }
 

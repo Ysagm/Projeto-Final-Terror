@@ -188,6 +188,7 @@ MonoBehaviour:
   myCamera: {fileID: 4024483399412134146}
   myCamMove: {fileID: 4024483399412134148}
   playerBody: {fileID: 8996208643219304540}
+  myListener: {fileID: 4024483399412134147}
 --- !u!114 &4024483400358987022
 MonoBehaviour:
   m_ObjectHideFlags: 0
