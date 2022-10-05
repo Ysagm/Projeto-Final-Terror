@@ -26,15 +26,6 @@ public class GamePlayer : MonoBehaviour
         myCamera.enabled = photonView.IsMine;
         myCamMove.camMoving = photonView.IsMine;
         playerBody.SetActive(!photonView.IsMine);
-        /*twoPlayers = PhotonNetwork.PlayerList;
-
-        foreach(Player p in twoPlayers)
-        {
-            if(p != PhotonNetwork.LocalPlayer)
-            {
-                id++;
-            }
-        }*/
     }
 
     // Update is called once per frame
@@ -42,9 +33,6 @@ public class GamePlayer : MonoBehaviour
     {
         if(photonView.IsMine) 
         {
-            //puzzle.Resposta("");
-            //myPlayer = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), GameSpawn.instance.spawnPoints[id].position, Quaternion.identity);
-
             if (Input.GetKeyDown(KeyCode.C))
             {
                 photonView.RPC("ChangeColor", RpcTarget.All, Random.Range(0.0f, 1.0f));
