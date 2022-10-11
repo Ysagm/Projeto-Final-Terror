@@ -42,11 +42,20 @@ public class GamePlayer : MonoBehaviour
                 photonView.RPC("ChangeColor", RpcTarget.All, Random.Range(0.0f, 1.0f));
             }
 
-            if(Mathf.Abs(myCamera.transform.localEulerAngles.y) > 45 && puzzleIsClosed == false)
+            //Vector3 forward = transform.TransformDirection(Vector3.forward);
+            //Transform other = GameObject.Find("CadernoPuzzles2").transform.TransformDirection(Vector3.forward);
+            //Vector3 toOther = other.position - transform.position;
+            //Vector3 toOther = GameObject.Find("CadernoPuzzles2").transform.TransformDirection(Vector3.forward);;
+            //if (Vector3.Dot(forward, toOther) < 0.2f && puzzleIsClosed == false)
+
+            if((myCamera.transform.localEulerAngles.y > 45 ||
+                (myCamera.transform.localEulerAngles.y > 300 && myCamera.transform.localEulerAngles.y < 364))
+            
+            && puzzleIsClosed == false)
             {
                 puzzleIsClosed = true;
                 FindObjectOfType<OpenPuzzle>().Close();
-                Debug.Log("Close " + Mathf.Abs(myCamera.transform.localEulerAngles.y));
+                //Debug.Log("Close " + Mathf.Abs(myCamera.transform.localEulerAngles.y));
             }
             else
             {

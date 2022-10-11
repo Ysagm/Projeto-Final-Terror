@@ -12,6 +12,8 @@ public class OpenPuzzle : MonoBehaviour
     PhotonView photonView;
 
 
+    private Coroutine openCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class OpenPuzzle : MonoBehaviour
             }
             else
             {
-                StartCoroutine(Open());
+                openCoroutine = StartCoroutine(Open());
             }
         }
         
@@ -52,11 +54,11 @@ public class OpenPuzzle : MonoBehaviour
         }
             
         
-        Debug.Log("Papel sobe");
+        ///Debug.Log("Papel sobe");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         puzzle.SetActive(true);
-        Debug.Log("Papel aparece");
+        //Debug.Log("Papel aparece");
 
         //Fecha
         /*GameIsPause = false;
@@ -67,6 +69,9 @@ public class OpenPuzzle : MonoBehaviour
 
     public void Close()
     {
+        Debug.LogError("FDP");
+        if(openCoroutine != null)
+            StopCoroutine(openCoroutine);
         GameIsPause = false;
         puzzle.SetActive(false);
 
