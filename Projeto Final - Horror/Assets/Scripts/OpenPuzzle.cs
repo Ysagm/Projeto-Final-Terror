@@ -69,7 +69,7 @@ public class OpenPuzzle : MonoBehaviour
 
     public void Close()
     {
-        Debug.LogError("FDP");
+        //Debug.LogError("FDP");
         if(openCoroutine != null)
             StopCoroutine(openCoroutine);
         GameIsPause = false;

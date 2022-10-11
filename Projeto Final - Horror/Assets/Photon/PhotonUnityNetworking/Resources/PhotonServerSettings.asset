@@ -42,6 +42,7 @@ MonoBehaviour:
   - ChangeColor
   - CantHearYou
   - HeresWhy
+  - RPC_AddNewMessages
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
