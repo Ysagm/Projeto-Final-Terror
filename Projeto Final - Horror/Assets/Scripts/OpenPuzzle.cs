@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 using Photon.Pun;
 using Photon.Realtime;
@@ -11,8 +12,9 @@ public class OpenPuzzle : MonoBehaviour
     public GameObject puzzle, papelPuzzle1, papelPuzzle2;
     PhotonView photonView;
 
-
     private Coroutine openCoroutine;
+
+    public bool chatActive;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class OpenPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && chatActive == false)
         {
             if (GameIsPause)
             {
@@ -58,12 +60,6 @@ public class OpenPuzzle : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         puzzle.SetActive(true);
-        //Debug.Log("Papel aparece");
-
-        //Fecha
-        /*GameIsPause = false;
-        puzzle.SetActive(false);
-        Debug.Log("Papel fecha");*/
 
     }
 
@@ -85,5 +81,14 @@ public class OpenPuzzle : MonoBehaviour
         }
     }
 
+    public void ChatIsActive(BaseEventData eventdata)
+    {
+        chatActive = true;
+    }
+
+    public void ChatIsNotActive(BaseEventData eventdata)
+    {
+        chatActive = false;
+    }
 
 }

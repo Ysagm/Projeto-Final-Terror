@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Text.RegularExpressions;
 
+using UnityEngine.EventSystems;
 
 using Photon.Pun;
 using Photon.Chat;
@@ -47,8 +48,10 @@ public class ChatController : MonoBehaviour
         }
 
         SendChat(chatInput.text);
-        chatInput.ActivateInputField();
+        //chatInput.ActivateInputField();
         chatInput.text = "";
+
+        EventSystem.current.SetSelectedGameObject(null);
 
     }
 
