@@ -17,7 +17,7 @@ public class ChatController : MonoBehaviour
     private PhotonView photonView;
     private List<string> messages = new List<string>();
     private float delay = 0f;
-    private int maxMessages = 14;
+    private int maxMessages = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,7 @@ public class ChatController : MonoBehaviour
 
     public void SendChat(string msg)
     {
+        
         string NewMessage = PhotonNetwork.NickName + ": " + msg;
         photonView.RPC("RPC_AddNewMessages", RpcTarget.All, NewMessage);
     }
@@ -80,7 +81,7 @@ public class ChatController : MonoBehaviour
             if(delay<Time.time)
             {
                 ChatContents();
-                delay = Time.time +0.25f;
+                delay = Time.time + 0.25f;
             }
         }
         else if(messages.Count>0)
