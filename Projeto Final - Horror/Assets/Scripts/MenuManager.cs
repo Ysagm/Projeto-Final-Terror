@@ -5,18 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private string nameOfLevel;
+    //[SerializeField] private string nameOfLevel;
     [SerializeField] private GameObject Menu;
     [SerializeField] private GameObject Intro;
+    [SerializeField] private GameObject Blackout;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
     
 
-    public void Play(){
-        SceneManager.LoadScene(nameOfLevel);
 
-    }
+    //Cena Blackout: aguardar por 4 segundos e ir direto para o Jogo
+     public string SceneToLoad = "Jogo";
+     public bool cena = false;
+     public float DelayTime = 3.5f;
+     public void Play() {
+
+        if (cena == true)
+     
+        {
+         StartCoroutine("Wait");     
+        }
+     
+     }
+     private IEnumerator Wait()
+     {
+         yield return new WaitForSeconds(DelayTime);
+ 
+         SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
+     }
+     
+    
+    
     public void OpenIntro(){
         Menu.SetActive(false);
         Intro.SetActive(true);
@@ -25,6 +45,13 @@ public class MenuManager : MonoBehaviour
     public void CloseIntro(){
         Intro.SetActive(false);
         Menu.SetActive(true);
+    }
+    public void OpenBlackout(){
+        Menu.SetActive(false);
+        Blackout.SetActive(true);
+        cena = true;
+        Debug.Log("Abriu Blackout");
+        Play();
     }
     public void OpenOptions(){
         Menu.SetActive(false);
@@ -54,5 +81,38 @@ public class MenuManager : MonoBehaviour
         Credits.SetActive(false);
         Menu.SetActive(true);
     }
+    
 }
+
+
+/*
+public class videoscript : MonoBehaviour
+{
+ 
+     VideoPlayer video;
+ 
+    void Start()
+    {
+        video = GetComponent<VideoPlayer>();
+        video.Play();
+        StartCoroutine("WaitForMovieEnd");
+    }
+ 
+ 
+    public IEnumerator WaitForMovieEnd()
+    {
+        while (video.isPlaying)
+        {
+            yield return new WaitForEndOfFrame();
+         
+        }
+        OnMovieEnded();
+    }
+ 
+     void OnMovieEnded()
+    {
+        SceneManager.LoadScene(0);
+    }
+}
+*/
 
