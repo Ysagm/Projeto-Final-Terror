@@ -12,44 +12,45 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
+    [SerializeField] private GameObject IntroVoice;
     
 
 
-    //Cena Blackout: aguardar por 4 segundos e ir direto para o Jogo
+    //Cena Blackout: aguardar por 3.5 segundos e ir direto para o Jogo
      public string SceneToLoad = "Jogo";
-     public bool cena = false;
+     public bool cenaBlackout = false;
      public float DelayTime = 3.5f;
-     public void Play() {
-
-        if (cena == true)
-     
+     public void Play() 
+     {
+        if (cenaBlackout == true)     
         {
-         StartCoroutine("Wait");     
+         StartCoroutine("Wait");
+         Destroy(IntroVoice);
         }
-     
      }
      private IEnumerator Wait()
      {
          yield return new WaitForSeconds(DelayTime);
  
          SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
-     }
-     
+     }     
     
     
     public void OpenIntro(){
         Menu.SetActive(false);
         Intro.SetActive(true);
         Debug.Log("Abriu intro");
-    }
+        }        
+    
     public void CloseIntro(){
         Intro.SetActive(false);
         Menu.SetActive(true);
+        Destroy(IntroVoice);
     }
     public void OpenBlackout(){
         Menu.SetActive(false);
         Blackout.SetActive(true);
-        cena = true;
+        cenaBlackout = true;
         Debug.Log("Abriu Blackout");
         Play();
     }
