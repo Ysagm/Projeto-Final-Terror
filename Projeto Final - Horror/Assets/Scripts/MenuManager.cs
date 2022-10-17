@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
     [SerializeField] private GameObject IntroVoice;
+    [SerializeField] private GameObject BGMusic;
     
 
 
@@ -26,6 +27,7 @@ public class MenuManager : MonoBehaviour
         {
          StartCoroutine("Wait");
          Destroy(IntroVoice);
+         Destroy (BGMusic);
         }
      }
      private IEnumerator Wait()
