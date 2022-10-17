@@ -48,7 +48,7 @@ public class GamePlayer : MonoBehaviour
             //Vector3 toOther = GameObject.Find("CadernoPuzzles2").transform.TransformDirection(Vector3.forward);;
             //if (Vector3.Dot(forward, toOther) < 0.2f && puzzleIsClosed == false)
 
-            if((myCamera.transform.localEulerAngles.y > 45 ||
+/*             if((myCamera.transform.localEulerAngles.y > 45 ||
                 (myCamera.transform.localEulerAngles.y > 300 && myCamera.transform.localEulerAngles.y < 364))
             
             && puzzleIsClosed == false)
@@ -60,7 +60,7 @@ public class GamePlayer : MonoBehaviour
             else
             {
                 puzzleIsClosed = false;
-            }
+            } */
         }
     }
 
