@@ -45,20 +45,21 @@ public class OpenPuzzle : MonoBehaviour
         //Quando subir
         GameIsPause = true;
 
-        //papelPuzzle.transform.position = new Vector3(0f, 0.0f, 0.0f);
         if (PhotonNetwork.IsMasterClient)
         {
-            papelPuzzle1.transform.localEulerAngles = Vector3.right * 45;
+            //papelPuzzle1.transform.localEulerAngles = Vector3.right * 45;
+             papelPuzzle1.GetComponent<Animator>().Play("LiftBook");
         }
         else
         {
-            papelPuzzle2.transform.localEulerAngles = Vector3.left * 45;
+            //papelPuzzle2.transform.localEulerAngles = Vector3.left * 45;
+            papelPuzzle2.GetComponent<Animator>().Play("LiftBook");
         }
             
         
         ///Debug.Log("Papel sobe");
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         puzzle.SetActive(true);
 
     }
@@ -73,11 +74,13 @@ public class OpenPuzzle : MonoBehaviour
 
         if (PhotonNetwork.IsMasterClient)
         {
-            papelPuzzle1.transform.localEulerAngles = Vector3.zero;
+            //papelPuzzle1.transform.localEulerAngles = Vector3.zero;
+            papelPuzzle1.GetComponent<Animator>().Play("DefaultPosition");
         }
         else
         {
-            papelPuzzle2.transform.localEulerAngles = Vector3.zero;
+            //papelPuzzle2.transform.localEulerAngles = Vector3.zero;
+            papelPuzzle2.GetComponent<Animator>().Play("DefaultPosition");
         }
     }
 
