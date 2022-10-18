@@ -47,7 +47,7 @@ public class GamePlayer : MonoBehaviour
                 && puzzleIsClosed == false)
             {                
                 puzzleIsClosed = true;
-                FindObjectOfType<OpenPuzzle>().Close();
+                FindObjectOfType<OpenPuzzle>().Closed();
                 //Debug.Log("Close " + Mathf.Abs(myCamera.transform.localEulerAngles.y));
             }
             else

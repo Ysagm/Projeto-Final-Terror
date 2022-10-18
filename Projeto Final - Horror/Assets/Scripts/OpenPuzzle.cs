@@ -83,6 +83,24 @@ public class OpenPuzzle : MonoBehaviour
             papelPuzzle2.GetComponent<Animator>().Play("DefaultPosition");
         }
     }
+    public void Closed(){
+
+        if(openCoroutine != null)
+        StopCoroutine(openCoroutine);
+        GameIsPause = false;
+        puzzle.SetActive(false);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            //papelPuzzle1.transform.localEulerAngles = Vector3.zero;
+            papelPuzzle1.GetComponent<Animator>().Play("Normal1");
+        }
+        else
+        {
+            //papelPuzzle2.transform.localEulerAngles = Vector3.zero;
+            papelPuzzle2.GetComponent<Animator>().Play("Normal");
+        }
+    }
 
     public void ChatIsActive(BaseEventData eventdata)
     {
