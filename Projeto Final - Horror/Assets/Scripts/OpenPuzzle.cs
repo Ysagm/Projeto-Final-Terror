@@ -48,7 +48,7 @@ public class OpenPuzzle : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             //papelPuzzle1.transform.localEulerAngles = Vector3.right * 45;
-            papelPuzzle1.GetComponent<Animator>().Play("LiftBook");
+            papelPuzzle1.GetComponent<Animator>().Play("LiftBook1");
         }
         else
         {
@@ -75,7 +75,7 @@ public class OpenPuzzle : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             //papelPuzzle1.transform.localEulerAngles = Vector3.zero;
-            papelPuzzle1.GetComponent<Animator>().Play("DefaultPosition");
+            papelPuzzle1.GetComponent<Animator>().Play("DefaultPosition1");
         }
         else
         {
