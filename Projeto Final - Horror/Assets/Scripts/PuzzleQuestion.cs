@@ -27,6 +27,12 @@ public class PuzzleQuestion : MonoBehaviour
     public AudioSource audioAcerto;
     public AudioSource audioErro;
 
+    public int voz = 0;
+
+    [SerializeField]
+    public AudioSource[] vozesMentira;
+    public AudioSource[] vozesVerdade;    
+    
     void Start()
     {
         //audioAcerto = GetComponent<AudioSource>();
@@ -71,10 +77,12 @@ public class PuzzleQuestion : MonoBehaviour
     void NextQuestion()
     {
         idRiddle += 1;
+        voz += 1;
 
         riddle.text = riddles[idRiddle];
         respostaE.text = answerE[idRiddle];
         respostaD.text = answerD[idRiddle];
+
     }
 
     // Update is called once per frame
