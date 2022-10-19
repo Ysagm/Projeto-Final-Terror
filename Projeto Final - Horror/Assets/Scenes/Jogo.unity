@@ -3398,12 +3398,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aa4e0486a9bcef94198617c3156bf208, type: 3}
   - {fileID: 8300000, guid: d652179fe8cba5c429c7ba6460981798, type: 3}
   vozesVerdade:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 6319d9d52b608b74ba1cf54c1ee10a8f, type: 3}
+  - {fileID: 8300000, guid: 014b963629e67ef4482ac2af0ed6e8c3, type: 3}
+  - {fileID: 8300000, guid: ca282966c8263e04fa49b8f73490796b, type: 3}
+  - {fileID: 8300000, guid: 7a7d18309fd8cd849adaa2114994cb29, type: 3}
+  - {fileID: 8300000, guid: 58f5c61dfeef8f1459b479a22cfe7a76, type: 3}
+  - {fileID: 8300000, guid: 3983be3377827ed488f9881e6a585500, type: 3}
   vozes: {fileID: 1967995048}
 --- !u!1 &1808772093
 GameObject:
