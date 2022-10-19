@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 using Photon.Pun;
 using Photon.Realtime;
@@ -16,10 +18,20 @@ public class OpenPuzzle : MonoBehaviour
 
     public bool chatActive;
 
+    public int voz = 0;
+
+    //Audio Vozes
+    [SerializeField]
+    public AudioClip[] vozesMentira;
+    public AudioClip[] vozesVerdade;
+    public AudioSource vozes;
+
+
     // Start is called before the first frame update
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+
     }
 
     // Update is called once per frame
@@ -83,6 +95,7 @@ public class OpenPuzzle : MonoBehaviour
             papelPuzzle2.GetComponent<Animator>().Play("DefaultPosition");
         }
     }
+
     public void Closed(){
 
         if(openCoroutine != null)

@@ -25,13 +25,7 @@ public class PuzzleQuestion : MonoBehaviour
 
     //Audio
     public AudioSource audioAcerto;
-    public AudioSource audioErro;
-
-    public int voz = 0;
-
-    [SerializeField]
-    public AudioSource[] vozesMentira;
-    public AudioSource[] vozesVerdade;    
+    public AudioSource audioErro;    
     
     void Start()
     {
@@ -53,9 +47,11 @@ public class PuzzleQuestion : MonoBehaviour
             {
                 acertos++;
                 Debug.Log("Acertou E");
+                FindObjectOfType<OpenPuzzle>().Closed();
                 audioAcerto.Play();
             }
             else{
+                FindObjectOfType<OpenPuzzle>().Closed();
                 audioErro.Play();
             }
         }
@@ -64,9 +60,11 @@ public class PuzzleQuestion : MonoBehaviour
             {
                 acertos++;
                 Debug.Log("Acertou D");
+                FindObjectOfType<OpenPuzzle>().Closed();
                 audioAcerto.Play();
             }
             else{
+                FindObjectOfType<OpenPuzzle>().Closed();
                 audioErro.Play();
             }
                 
@@ -77,7 +75,6 @@ public class PuzzleQuestion : MonoBehaviour
     void NextQuestion()
     {
         idRiddle += 1;
-        voz += 1;
 
         riddle.text = riddles[idRiddle];
         respostaE.text = answerE[idRiddle];
