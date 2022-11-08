@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
+    [SerializeField] private GameObject Epilogue;
     [SerializeField] private GameObject IntroVoice;
     [SerializeField] private GameObject BGMusic;
     
@@ -82,6 +83,15 @@ public class MenuManager : MonoBehaviour
     }
     public void CloseCredits(){
         Credits.SetActive(false);
+        Menu.SetActive(true);
+    }
+    public void OpenEpilogue(){
+        Menu.SetActive(false);
+        Epilogue.SetActive(true);
+        Debug.Log("Abriu Epilogue");
+    }
+    public void CloseEpilogue(){
+        Epilogue.SetActive(false);
         Menu.SetActive(true);
     }
     
