@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject Extra;
     [SerializeField] private GameObject Credits;
     [SerializeField] private GameObject Epilogue;
+    [SerializeField] private GameObject EpilogueBlackout;
     [SerializeField] private GameObject IntroVoice;
     [SerializeField] private GameObject BGMusic;
     
@@ -21,7 +22,10 @@ public class MenuManager : MonoBehaviour
     //Cena Blackout: aguardar por 3.5 segundos e ir direto para o Jogo
      public string SceneToLoad = "Jogo";
      public bool cenaBlackout = false;
+     public bool cenaEpilogue = false;
      public float DelayTime = 3.5f;
+
+
      public void Play() 
      {
         if (cenaBlackout == true)     
@@ -29,14 +33,24 @@ public class MenuManager : MonoBehaviour
          StartCoroutine("Wait");
          Destroy(IntroVoice);
          Destroy (BGMusic);
-        }
+         Debug.Log("Entrou Play");
+        }       
      }
+
+     
      private IEnumerator Wait()
      {
          yield return new WaitForSeconds(DelayTime);
  
-         SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
-     }     
+            SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
+     }   
+     
+     private IEnumerator WaitEpilogue()
+     {
+         yield return new WaitForSeconds(DelayTime);
+ 
+         OpenEpilogue();   
+     }        
     
     
     public void OpenIntro(){
@@ -86,14 +100,29 @@ public class MenuManager : MonoBehaviour
         Menu.SetActive(true);
     }
     public void OpenEpilogue(){
-        Menu.SetActive(false);
+        Blackout.SetActive(false);
         Epilogue.SetActive(true);
+        cenaEpilogue = true;
+        SceneToLoad = "Menu";
         Debug.Log("Abriu Epilogue");
-    }
-    public void CloseEpilogue(){
+        Play();
+    }  
+
+    public void OpenEpilogueBlackout(){
+        Destroy (BGMusic);
         Epilogue.SetActive(false);
-        Menu.SetActive(true);
+        EpilogueBlackout.SetActive(true);
+        Debug.Log("Abriu EpilogueBlackout");
+       
     }
+
+    public void OpenMenu(){
+        SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
+        Destroy (BGMusic);
+        EpilogueBlackout.SetActive(false);
+        Menu.SetActive(true);
+        Debug.Log("Abriu menu");
+        }     
     
 }
 

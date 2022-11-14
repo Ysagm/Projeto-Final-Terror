@@ -17,6 +17,7 @@ public class PuzzleQuestion : MonoBehaviour
     public string[] certas; //Armazena resposta certa
 
     private int idRiddle;
+    public MenuManager epilogue;
 
     //ideia: decisão de vitoria ou derrota (ending diferente dependendo da quantidade de acertos)
     private float acertos;
@@ -67,8 +68,8 @@ public class PuzzleQuestion : MonoBehaviour
                 FindObjectOfType<OpenPuzzle>().Closed();
                 audioErro.Play();
             }
-                
         }
+                
         NextQuestion();
     }
 
@@ -80,6 +81,9 @@ public class PuzzleQuestion : MonoBehaviour
         respostaE.text = answerE[idRiddle];
         respostaD.text = answerD[idRiddle];
 
+        if (idRiddle == 7) {
+            epilogue.GetComponent<MenuManager>().OpenEpilogue();
+        }
     }
 
     // Update is called once per frame
