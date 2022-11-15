@@ -57,6 +57,7 @@ public class PuzzleQuestion : MonoBehaviour
             }
         }
         else if (answer == "D"){
+            
             if(answerD[idRiddle] == certas[idRiddle])
             {
                 acertos++;
@@ -67,28 +68,25 @@ public class PuzzleQuestion : MonoBehaviour
             else{
                 FindObjectOfType<OpenPuzzle>().Closed();
                 audioErro.Play();
-            }
+            }                        
         }
                 
         NextQuestion();
     }
 
     void NextQuestion()
-    {
+    {        
         idRiddle += 1;
-
         riddle.text = riddles[idRiddle];
         respostaE.text = answerE[idRiddle];
-        respostaD.text = answerD[idRiddle];
-
-        if (idRiddle == 7) {
-            epilogue.GetComponent<MenuManager>().OpenEpilogue();
-        }
+        respostaD.text = answerD[idRiddle];               
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (idRiddle == 8) {
+            epilogue.GetComponent<MenuManager>().OpenEpilogue();
+        }
     }
 }
