@@ -6,6 +6,8 @@ using TMPro;
 
 public class PuzzleQuestion : MonoBehaviour
 {   
+    [SerializeField] private GameObject Enforcado;
+    [SerializeField] private GameObject MonstroTeto;
 
     public TextMeshProUGUI riddle;
     public TextMeshProUGUI respostaD;
@@ -79,7 +81,17 @@ public class PuzzleQuestion : MonoBehaviour
         idRiddle += 1;
         riddle.text = riddles[idRiddle];
         respostaE.text = answerE[idRiddle];
-        respostaD.text = answerD[idRiddle];               
+        respostaD.text = answerD[idRiddle];  
+
+        if (idRiddle == 2) {        
+        Enforcado.SetActive(true);
+        Debug.Log("Enforcado ok");        
+        }   
+        else if (idRiddle == 3) { 
+        MonstroTeto.SetActive(true); 
+        Enforcado.SetActive(false);
+        Debug.Log("Monstro Teto ok");  
+        }       
     }
 
     // Update is called once per frame
@@ -87,6 +99,6 @@ public class PuzzleQuestion : MonoBehaviour
     {
         if (idRiddle == 8) {
             epilogue.GetComponent<MenuManager>().OpenEpilogue();
-        }
+        }           
     }
 }
