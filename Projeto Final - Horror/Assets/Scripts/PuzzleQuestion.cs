@@ -8,6 +8,7 @@ public class PuzzleQuestion : MonoBehaviour
 {   
     [SerializeField] private GameObject Enforcado;
     [SerializeField] private GameObject MonstroTeto;
+    [SerializeField] private GameObject Eyes;
 
     public TextMeshProUGUI riddle;
     public TextMeshProUGUI respostaD;
@@ -105,7 +106,13 @@ public class PuzzleQuestion : MonoBehaviour
         MonstroTeto.SetActive(true); 
         Enforcado.SetActive(false);
         Debug.Log("Monstro Teto ok");  
-        }       
+        }               
+        else if (idRiddle == 5) { 
+        Eyes.SetActive(true); 
+        Enforcado.SetActive(false);
+        MonstroTeto.SetActive(false); 
+        Debug.Log("Olhos ok");  
+        }   
     }
 
     // Update is called once per frame
