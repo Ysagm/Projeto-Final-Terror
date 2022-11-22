@@ -18,13 +18,15 @@ public class OpenPuzzle : MonoBehaviour
 
     public bool chatActive;
 
-    public int voz = 0;
+    public int vozm = 0;
+    public int vozv = 0;
 
     //Audio Vozes
     [SerializeField]
     public AudioClip[] vozesMentira;
     public AudioClip[] vozesVerdade;
-    public AudioSource vozes;
+    public AudioSource vozesv;
+    public AudioSource vozesm;
 
 
     // Start is called before the first frame update
@@ -73,6 +75,20 @@ public class OpenPuzzle : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
         puzzle.SetActive(true);
+
+        //Play Audio
+        if (PhotonNetwork.IsMasterClient)
+        {
+            vozesv.clip = vozesVerdade[vozv];
+            vozesv.Play();
+            Debug.Log("Toca voz verdade");
+        }
+        else
+        {
+            vozesm.clip = vozesMentira[vozm];
+            vozesm.Play();
+            Debug.Log("Toca voz mentira");
+        }
 
     }
 
@@ -123,6 +139,18 @@ public class OpenPuzzle : MonoBehaviour
     public void ChatIsNotActive(BaseEventData eventdata)
     {
         chatActive = false;
+    }
+
+    public void NextVoz()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            vozv++;
+        }
+        else
+        {
+            vozm++;
+        }
     }
 
 }
