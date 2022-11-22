@@ -30,7 +30,7 @@ public class PuzzleQuestion : MonoBehaviour
     public AudioSource audioAcerto;
     public AudioSource audioErro;    
     
-    void Start()
+    IEnumerator Start()
     {
         //audioAcerto = GetComponent<AudioSource>();
 
@@ -40,6 +40,9 @@ public class PuzzleQuestion : MonoBehaviour
 
         if(riddles.Length > 0)
             riddle.text = riddles[idRiddle];
+        
+        yield return new WaitForSeconds(5.0f);
+
         if(answerE.Length > 0)
             respostaE.text = answerE[idRiddle];
          if(answerD.Length > 0)
@@ -48,6 +51,9 @@ public class PuzzleQuestion : MonoBehaviour
 
     public void Resposta(string answer)
     {
+        respostaE.text = "";
+        respostaD.text = "";
+
        if(answer == "E"){
             if(answerE[idRiddle] == certas[idRiddle])
             {
@@ -75,14 +81,19 @@ public class PuzzleQuestion : MonoBehaviour
                 audioErro.Play();
             }                        
         }
-                
-        NextQuestion();
+
+        StartCoroutine(NextQuestion());
+
+        //NextQuestion();
     }
 
-    void NextQuestion()
+    //void 
+    IEnumerator NextQuestion()
     {        
+        
         idRiddle += 1;
         riddle.text = riddles[idRiddle];
+        yield return new WaitForSeconds(5.0f);
         respostaE.text = answerE[idRiddle];
         respostaD.text = answerD[idRiddle];  
 
