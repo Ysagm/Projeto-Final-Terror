@@ -36,11 +36,14 @@ public class PuzzleQuestion : MonoBehaviour
 
         idRiddle = 0;
         quantRiddles = riddles.Length;
-        riddle.text = riddles[idRiddle];
+        //riddle.text = riddles[idRiddle];
 
-        riddle.text = riddles[idRiddle];
-        respostaE.text = answerE[idRiddle];
-        respostaD.text = answerD[idRiddle];
+        if(riddles.Length > 0)
+            riddle.text = riddles[idRiddle];
+        if(answerE.Length > 0)
+            respostaE.text = answerE[idRiddle];
+         if(answerD.Length > 0)
+            respostaD.text = answerD[idRiddle];
     }
 
     public void Resposta(string answer)
