@@ -65,6 +65,7 @@ public class MenuManager : MonoBehaviour
         Destroy(IntroVoice);
     }
     public void OpenBlackout(){
+        Destroy (BGMusic);
         Menu.SetActive(false);
         Blackout.SetActive(true);
         cenaBlackout = true;
@@ -100,6 +101,7 @@ public class MenuManager : MonoBehaviour
         Menu.SetActive(true);
     }
     public void OpenEpilogue(){
+        Destroy (BGMusic);
         Blackout.SetActive(false);
         Epilogue.SetActive(true);
         cenaEpilogue = true;

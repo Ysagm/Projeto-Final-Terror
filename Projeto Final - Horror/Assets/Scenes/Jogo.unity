@@ -1444,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &436482295
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1536,7 +1536,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7b2823b625e8c034f99897179e341a28, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enforcado: {fileID: 6418258465367758145}
   MonstroTeto: {fileID: 2490660938362370578}
-  Olhos: {fileID: 436482294}
+  Eyes: {fileID: 436482294}
   riddle: {fileID: 0}
   respostaD: {fileID: 0}
   respostaE: {fileID: 0}
@@ -3479,7 +3479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enforcado: {fileID: 6418258465367758145}
   MonstroTeto: {fileID: 2490660938362370578}
-  Olhos: {fileID: 0}
+  Eyes: {fileID: 436482294}
   riddle: {fileID: 191472087}
   respostaD: {fileID: 2095220351}
   respostaE: {fileID: 275379682}
@@ -7641,7 +7641,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3aef2d7ccfb7d9353abff95812c55b88, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7739,7 +7739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enforcado: {fileID: 6418258465367758145}
   MonstroTeto: {fileID: 2490660938362370578}
-  Olhos: {fileID: 0}
+  Eyes: {fileID: 436482294}
   riddle: {fileID: 0}
   respostaD: {fileID: 0}
   respostaE: {fileID: 0}
@@ -8063,7 +8063,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 550eadc278b888922b6ee47ad06e7de9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8161,7 +8161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enforcado: {fileID: 6418258465367758145}
   MonstroTeto: {fileID: 2490660938362370578}
-  Olhos: {fileID: 0}
+  Eyes: {fileID: 436482294}
   riddle: {fileID: 0}
   respostaD: {fileID: 0}
   respostaE: {fileID: 0}
