@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658792, g: 0.49642283, b: 0.5748252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3413,17 +3413,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 699658665}
-  Intro: {fileID: 0}
+  Intro: {fileID: 1982294245}
   Blackout: {fileID: 608564513}
-  Options: {fileID: 0}
-  Extra: {fileID: 0}
-  Credits: {fileID: 0}
+  Options: {fileID: 1747027885}
+  Extra: {fileID: 298533519}
+  Credits: {fileID: 323553224}
   Epilogue: {fileID: 739446400}
   EpilogueBlackout: {fileID: 0}
   IntroVoice: {fileID: 1849538148}
   BGMusic: {fileID: 1048722011}
   SceneToLoad: Jogo
-  cenaBlackout: 0
+  cenaBlackout: 1
   cenaEpilogue: 0
   DelayTime: 5
 --- !u!1 &620076661
@@ -11229,7 +11229,7 @@ MonoBehaviour:
   IntroVoice: {fileID: 1849538148}
   BGMusic: {fileID: 0}
   SceneToLoad: Jogo
-  cenaBlackout: 0
+  cenaBlackout: 1
   cenaEpilogue: 0
   DelayTime: 3
 --- !u!4 &2068525458

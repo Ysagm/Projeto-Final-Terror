@@ -98,19 +98,18 @@ public class PuzzleQuestion : MonoBehaviour
         respostaE.text = answerE[idRiddle];
         respostaD.text = answerD[idRiddle];  
 
-        if (idRiddle == 2) {        
+        if (idRiddle == 6) {        
         Enforcado.SetActive(true);
+        MonstroTeto.SetActive(false);
         Debug.Log("Enforcado ok");        
         }   
         else if (idRiddle == 3) { 
         MonstroTeto.SetActive(true); 
-        Enforcado.SetActive(false);
         Debug.Log("Monstro Teto ok");  
         }               
-        else if (idRiddle == 5) { 
+        else if (idRiddle == 2) { 
         Eyes.SetActive(true); 
-        Enforcado.SetActive(false);
-        MonstroTeto.SetActive(false); 
+        Enforcado.SetActive(false);         
         Debug.Log("Olhos ok");  
         }   
     }
